@@ -1,0 +1,815 @@
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600&family=Tomorrow:wght@100;200;300;400;500;600;700&display=swap");
+/* 
+font-family: 'Titillium Web', sans-serif;
+font-family: 'Tomorrow', sans-serif;
+ */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Titillium Web", sans-serif;
+}
+
+html {
+	font-size: 16px;
+}
+
+body {
+	width: 100vw;
+	height: 100%;
+}
+
+ul {
+	list-style: none;
+}
+
+button {
+	transition: 0.3s;
+	cursor: pointer;
+}
+
+header {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	background-color: rgba(0, 10, 5, 0.8);
+	position: relative;
+}
+
+header::before {
+	position: absolute;
+	content: "";
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-image: url(./assets/bg.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	z-index: -1;
+}
+
+header nav {
+	width: 90%;
+	height: 10%;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+#nav-logo {
+	width: 42.34px;
+	height: 50px;
+}
+
+header nav ul {
+	display: flex;
+	align-items: center;
+	background: rgba(255, 255, 255, 0.16);
+	border-radius: 4px;
+	border: solid 4px transparent;
+}
+
+header nav li {
+	padding: 16px;
+	font-size: 1rem;
+	letter-spacing: 1px;
+	cursor: pointer;
+	color: #fff;
+}
+
+header nav button {
+	font-size: 1rem;
+	letter-spacing: 1px;
+	padding: 16px 48px;
+	background: #00a352;
+	border: 4px dashed #00cc66;
+	color: #fff;
+}
+
+header section {
+	width: 90%;
+	height: 90%;
+	margin: 0 auto;
+	margin-top: clamp(5vh, 7.5rem, 80px);
+}
+
+header .right-circle,
+header .left-circle {
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	border: 3px dashed rgba(255, 255, 255, 0.4);
+	position: relative;
+	margin-left: 35px;
+}
+
+header .right-circle::after,
+header .left-circle::after {
+	position: absolute;
+	top: -39px;
+	left: -39px;
+	content: "";
+	width: 154px;
+	height: 154px;
+	border-radius: 50%;
+	border: 3px dashed rgba(255, 255, 255, 0.4);
+}
+
+header .left-circle {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	color: #fff;
+	font-family: "Tomorrow", sans-serif;
+	font-weight: 600;
+	margin-bottom: 2rem;
+}
+
+header .right-circle {
+	transform: translate(80%, 50%);
+}
+
+.circle-text {
+	font-size: 1rem;
+}
+
+header .main-header {
+	font-family: "Tomorrow", sans-serif;
+	font-weight: 600;
+	font-size: 5.5rem;
+	color: #fff;
+}
+
+header .main-desc {
+	margin: 1.5rem 0;
+	font-size: 1rem;
+	letter-spacing: 1px;
+	color: #fff;
+}
+
+/* for responsive text */
+header .mobile-desc {
+	width: 100%;
+	display: none;
+}
+
+header .header-stats {
+	display: flex;
+	align-items: center;
+	position: absolute;
+	bottom: 3.5rem;
+}
+
+header .header-stats li {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+header .header-stats li:nth-child(2) {
+	margin: 0 25px;
+}
+
+header .header-stats h2 {
+	font-size: 2rem;
+	letter-spacing: 9px;
+	font-family: "Tomorrow", sans-serif;
+	margin-bottom: 1rem;
+	color: transparent;
+	-webkit-text-stroke-width: 1.8px;
+	-webkit-text-stroke-color: white;
+}
+
+header .header-stats p {
+	font-size: 1rem;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: white;
+}
+
+header .explore-animation {
+	position: absolute;
+	bottom: 3.5rem;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+header .explore-animation img {
+	margin-bottom: 2.4rem;
+	width: 33.87px;
+	height: 40px;
+}
+
+header .explore-animation p {
+	font-size: 1rem;
+	letter-spacing: 2rem;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+header .quote-swap {
+	position: absolute;
+	right: 70px;
+	bottom: 3.5rem;
+	display: flex;
+	flex-direction: column;
+}
+
+header .quote-swap .quote-box {
+	text-align: center;
+	width: 250px;
+	padding: 8px 5px;
+	letter-spacing: 1px;
+	color: #ffffff;
+	border: dashed 3px rgba(255, 255, 255, 0.4);
+}
+
+header .quote-controls {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 1rem;
+}
+
+header .quote-controls button {
+	background: transparent;
+	border: dashed 3px rgba(255, 255, 255, 0.4);
+	padding: 5px 15px;
+}
+
+/* styles for page description linked images */
+.linked-img {
+	width: 48px;
+	height: 48px;
+	border-radius: 8px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 2px dashed;
+	position: relative;
+}
+
+.linked-img > div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 32px;
+	height: 32px;
+	border-radius: 8px;
+}
+
+.linked-img img {
+	width: 24px;
+	height: auto;
+}
+
+#l1 {
+	border-color: #333333;
+	background: #f7f7f7;
+}
+
+#l1 > div {
+	background-color: #333333;
+	z-index: 2;
+}
+
+#l2 {
+	border-color: #dc47cd;
+	background: #fdf2fc;
+}
+
+#l2 > div {
+	background-color: #dc47cd;
+}
+
+#l3 {
+	border-color: #fa7d09;
+	background: #fff7f0;
+}
+
+#l3 > div {
+	background-color: #fa7d09;
+}
+
+/* styles for page description section */
+.page-desc {
+	width: 90%;
+	height: 100%;
+	margin: auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 4rem;
+}
+
+.page-desc .desc1 {
+	width: 48%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.page-desc .desc1 h2 {
+	font-size: 2rem;
+	line-height: 2.3rem;
+	font-family: "Tomorrow", sans-serif;
+	text-transform: capitalize;
+	font-weight: 600;
+	letter-spacing: 1px;
+}
+
+.page-desc .desc1 span {
+	font-family: "Tomorrow", sans-serif;
+	color: #00a352;
+	text-transform: capitalize;
+	font-weight: 600;
+}
+
+.page-desc .desc1 p {
+	margin-top: 1rem;
+	font-size: 1rem;
+	letter-spacing: 0.6px;
+}
+
+.page-desc .desc1 .mobile-desc {
+	display: none;
+}
+
+.page-desc .desc2 {
+	width: 42%;
+	display: flex;
+	margin-top: 2rem;
+	flex-direction: column;
+	align-items: flex-start;
+	position: relative;
+}
+
+.page-desc .desc2 .img-with-text {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.page-desc .desc2 .img-with-text .linked-img {
+	margin-right: 0.5rem;
+}
+
+.page-desc .desc2 .img-with-text .text {
+	width: 90%;
+	display: flex;
+	flex-direction: column;
+}
+
+.page-desc .desc2 .text h2 {
+	font-size: 1.125rem;
+}
+
+.page-desc .desc2 .text p {
+	font-size: 0.875rem;
+	color: #666666;
+}
+
+.desc2 .img-with-text#box1 {
+	margin-bottom: 4rem;
+}
+
+.desc2 #l1 {
+	position: absolute;
+	top: 50%;
+	left: -75px;
+	transform: translateY(-50%);
+}
+
+.desc2 .connector-straight {
+	position: absolute;
+	bottom: -89px;
+}
+
+.desc2 .connector-c {
+	position: absolute;
+	left: 50%;
+	top: -43px;
+}
+
+/* NFT showcase carousel */
+.nft-showcase {
+	width: 100%;
+	height: 100%;
+	padding: 8rem 0;
+	margin: 2rem 0;
+	display: flex;
+	align-items: center;
+}
+
+.nft-item {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	width: 488px;
+	margin-right: 51px;
+	transform-style: preserve-3d;
+}
+
+.nft-item:last-child {
+	margin-right: 0;
+}
+
+.nft-image {
+	width: 100%;
+	height: 668px;
+	background: red;
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	margin-bottom: 1rem;
+	border-radius: 16px;
+	position: relative;
+}
+
+#nft1 {
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0) 64.12%, #000000 100%),
+		url("./assets/nft1.png") no-repeat;
+	background-size: cover;
+}
+
+#nft2 {
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0) 64.12%, #000000 100%),
+		url("./assets/nft2.png") no-repeat;
+	background-size: cover;
+}
+
+#nft3 {
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0) 64.12%, #000000 100%),
+		url("./assets/nft3.png") no-repeat;
+	background-size: cover;
+}
+
+#nft4 {
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0) 64.12%, #000000 100%),
+		url("./assets/nft4.png") no-repeat;
+	background-size: cover;
+}
+
+#nft1::before {
+	position: absolute;
+	top: 0;
+	content: "";
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0) 64.12%, #000000 100%),
+		url("./assets/nft1.png");
+	filter: blur(20px);
+	z-index: -1;
+}
+
+#nft2::before {
+	position: absolute;
+	top: 0;
+	content: "";
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0) 64.12%, #000000 100%),
+		url("./assets/nft2.png");
+	filter: blur(20px);
+	z-index: -1;
+}
+
+#nft3::before {
+	position: absolute;
+	top: 0;
+	content: "";
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0) 64.12%, #000000 100%),
+		url("./assets/nft3.png");
+	filter: blur(20px);
+	z-index: -1;
+}
+
+#nft4::before {
+	position: absolute;
+	top: 0;
+	content: "";
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0) 64.12%, #000000 100%),
+		url("./assets/nft4.png");
+	z-index: -1;
+	filter: blur(20px);
+}
+
+.nft-image div {
+	width: 100%;
+	padding: 1.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.nft-image div p {
+	display: flex;
+	align-items: center;
+	color: #fff;
+}
+
+.nft-image div p img {
+	width: 24px;
+	height: 24px;
+	margin-right: 0.5rem;
+}
+
+.nft-image div p:last-child {
+	font-size: 1.125rem;
+	padding: 0.5rem;
+	border: 3px dashed rgba(255, 255, 255, 0.24);
+	border-radius: 1.5rem;
+}
+
+.nft-item > h3 {
+	font-size: 1rem;
+	line-height: 20px;
+	font-weight: 600;
+	letter-spacing: 0.6px;
+	text-transform: capitalize;
+	margin-bottom: 0.5rem;
+}
+
+.nft-item > p {
+	letter-spacing: 0.6px;
+	font-size: 1rem;
+	color: #616161;
+	margin-bottom: 0.5rem;
+}
+
+.nft-item > button {
+	width: 100%;
+	padding: 40px 0;
+	color: #fff;
+	font-family: "Tomorrow", sans-serif;
+	background: #00a352;
+	border: 4px dashed #00cc66;
+	box-shadow: -8px 14px 10px rgba(0, 204, 102, 0.32);
+	font-size: 1rem;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.glider-persp .glider-slide.left-1 {
+	-webkit-transform: perspective(3000px) rotateY(34deg) translateZ(0);
+	-webkit-transform-origin: 100% 50% 0;
+	transform: perspective(3000px) rotateY(34deg) translateZ(0);
+	transform-origin: 100% 50% 0;
+}
+
+.glider-persp .glider-slide.right-2 {
+	-webkit-transform: perspective(3000px) rotateY(-34deg) translateZ(0);
+	-webkit-transform-origin: 0 50% 0;
+	transform: perspective(3000px) rotateY(-34deg) translateZ(0);
+	transform-origin: 0 50% 0;
+}
+
+/* Artist showcase */
+
+/* .artist-showcase::before {
+	width: 100vw;
+	height: auto;
+	content: "";
+	background-size: cover;
+} */
+.artist-showcase {
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 10, 5, 0.8);
+	background: url("./assets/artist-bg.jpg");
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	padding-top: 7rem;
+	padding-bottom: 2rem;
+}
+
+.artist-showcase .artist-header-animation {
+	margin: auto;
+	position: relative;
+}
+
+.artist-showcase > .eye-animation {
+	width: 48px;
+	height: 48px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	border: solid 2px rgba(0, 10, 5, 0.8);
+	background-color: #fff;
+	position: absolute;
+	top: 0;
+	transform: translateY(-50%);
+	right: 55px;
+}
+
+.artist-showcase .main-header {
+	font-size: 7.5rem;
+	font-family: "Tomorrow", sans-serif;
+	letter-spacing: 40px;
+	position: relative;
+	color: rgba(255, 255, 255, 0.16);
+}
+
+.artist-showcase .main-header::after {
+	font-size: 3.5rem;
+	letter-spacing: 1px;
+	content: "AREOUS";
+	color: #fff;
+	font-family: "Tomorrow", sans-serif;
+	position: absolute;
+	bottom: 0;
+	right: calc(1rem + 40px);
+}
+
+.artist-showcase .main-shadow {
+	font-family: "Tomorrow", sans-serif;
+	font-size: 7.5rem;
+	letter-spacing: 40px;
+
+	color: rgba(255, 255, 255, 0.08);
+	bottom: 45px;
+	position: absolute;
+}
+
+.artist-showcase .main-shadow::after {
+	font-size: 7.5rem;
+	content: "AREOUS";
+	letter-spacing: 40px;
+
+	color: rgba(255, 255, 255, 0.04);
+	font-family: "Tomorrow", sans-serif;
+	position: absolute;
+	left: 0;
+	bottom: 45px;
+}
+
+.artist-showcase .artist-section {
+	margin: auto;
+	width: 90%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 150px;
+}
+
+.artist-section img {
+	width: 455px;
+	height: 654px;
+}
+
+.artist-section .showcase1 {
+	transform: rotateY(30deg);
+	border: solid 12px rgba(255, 255, 255, 0.16);
+	border-radius: 16px;
+}
+
+.artist-section .showcase2 {
+	transform: rotateY(330deg);
+	border: solid 12px rgba(255, 255, 255, 0.16);
+	border-radius: 16px;
+}
+
+.artist-section .showcase-holder {
+	max-width: 40%;
+	height: auto;
+	perspective: 2500px;
+}
+
+.artist-section .showcase-text {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.artist-section .showcase-text > div {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.artist-section .showcase-text img {
+	width: 50%;
+	max-width: 300px;
+	margin-right: 10%;
+	height: auto;
+}
+
+#clock1 {
+	margin-right: 10%;
+}
+
+#clock2 {
+	margin-left: 10%;
+}
+
+.artist-section .showcase-text p {
+	width: 30%;
+	color: rgba(255, 255, 255, 0.7);
+	font-size: 1rem;
+}
+
+.artist-section .showcase-text p span {
+	font-size: 2rem;
+	font-family: "Tomorrow", sans-serif;
+}
+.artist-section .showcase-text ul {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 40px;
+}
+
+.artist-section .showcase-text li {
+	width: 30%;
+	position: relative;
+	color: rgba(255, 255, 255, 0.7);
+}
+
+.artist-section .showcase-text li .eye-animation {
+	width: 48px;
+	height: 48px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	border-radius: 50%;
+	background-color: rgba(255, 255, 255, 0.16);
+	border: 7px solid rgba(255, 255, 255, 0.16);
+	position: absolute;
+	top: 0;
+	transform: translateY(-50%);
+	right: 0;
+}
+
+.showcase-text li .eye-animation img {
+	width: 32px;
+	height: 32px;
+}
+
+.artist-showcase .showcase-cta {
+	text-transform: uppercase;
+	font-size: 1.5rem;
+	font-family: "Tomorrow", sans-serif;
+	font-weight: 400;
+	letter-spacing: 0.72em;
+	width: max-content;
+	margin: auto;
+	margin-top: 100px;
+	text-align: center;
+	position: relative;
+}
+
+.showcase-cta .eye-animation {
+	width: 48px;
+	height: 48px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	border-radius: 50%;
+	background-color: rgba(255, 255, 255, 0.16);
+	border: 3px solid rgba(255, 255, 255, 0.16);
+	position: absolute;
+	top: 0;
+	transform: translateY(-50%);
+	right: 0;
+}
+
+footer {
+	margin-top: 1rem;
+	background: url("./assets/artist-bg.jpg");
+}
+
+footer ul {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+footer ul li {
+	color: #fff;
+	margin: 2rem auto;
+	font-size: 1rem;
+	border: 3px dashed rgba(255, 255, 255, 0.3);
+	padding: 8px 15px;
+}
