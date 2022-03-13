@@ -69,6 +69,7 @@ button {
 	font-weight: 400;
 	font-size: 4rem;
 	color: rgba(255, 255, 255, 0.7);
+	opacity: 0;
 }
 
 #preloader > h2 > span {
@@ -87,6 +88,8 @@ button {
 	max-width: 640px;
 	margin: auto;
 	align-items: center;
+	transform: translateY(100%);
+	opacity: 0;
 }
 
 #preloader > div > p {
@@ -109,6 +112,8 @@ button {
 	font-size: 1.5rem;
 	letter-spacing: 1.5rem;
 	position: relative;
+	transform: translateY(100%);
+	opacity: 0;
 }
 
 #preloader > p::after {
@@ -471,6 +476,12 @@ header .right-circle {
 	transform: translate(80%, 50%);
 }
 
+header .left-circle,
+header .right-circle {
+	transform: translateX(-100%);
+	opacity: 0;
+}
+
 .circle-text {
 	font-size: 1rem;
 }
@@ -521,6 +532,8 @@ header .main-header {
 	font-weight: 600;
 	font-size: 5.5rem;
 	color: #fff;
+	transform: translateY(100%);
+	opacity: 0;
 }
 
 header .main-desc {
@@ -528,6 +541,8 @@ header .main-desc {
 	font-size: 1rem;
 	letter-spacing: 1px;
 	color: #fff;
+	transform: translateY(100%);
+	opacity: 0;
 }
 
 /* for responsive text */
@@ -610,6 +625,8 @@ header .header-stats {
 	align-items: center;
 	position: absolute;
 	bottom: 3.5rem;
+	transform: translateY(100%);
+	opacity: 0;
 }
 
 header .header-stats li {
@@ -651,6 +668,8 @@ header .explore-animation {
 	align-items: center;
 	justify-content: center;
 	text-align: center;
+	transform: translateY(100%);
+	opacity: 0;
 }
 
 header .explore-animation img {
@@ -684,6 +703,8 @@ header .quote-swap {
 	bottom: 3.5rem;
 	display: flex;
 	flex-direction: column;
+	transform: translateY(100%);
+	opacity: 0;
 }
 
 header .quote-swap .quote-box {

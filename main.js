@@ -167,13 +167,13 @@ ScrollTrigger.scrollerProxy(".smooth-scroll", {
 let preload_tl = gsap.timeline({ defaults: { ease: "power4.inOut" } });
 
 preload_tl
-	.from("#preloader div", { yPercent: 100, duration: 2, opacity: 0 })
-	.from("#preloader > p", { yPercent: 100, opacity: 0, duration: 1 }, "-=1");
+	.to("#preloader div", { transform: 'translateY(0%)', opacity: 1, duration: 2 })
+	.to("#preloader > p", { transform: 'translateY(0%)', opacity: 1, duration: 1 }, "-=1");
 
 let loadCounter = gsap.timeline({ defaults: { ease: "power4.inOut" } });
 
 loadCounter
-	.from("#preloader > h2", { opacity: 0, duration: 1, opacity: 0 })
+	.to("#preloader > h2", { opacity: 1, duration: 1 })
 	.from("#preloader h2 span", {
 		textContent: 0,
 		duration: 2,
@@ -193,14 +193,15 @@ let header_tl = gsap.timeline({
 });
 
 header_tl
-	.from("header .main-header", { yPercent: 100, opacity: 0, delay: 0.5 })
-	.from(".main-desc", { yPercent: 100, opacity: 0 }, "-=1.5")
-	.from(
+	.to("header .main-header", { transform: 'translateY(0%)', opacity: 1, delay: 0.5 })
+	.to(".main-desc", { transform: 'translateY(0%)', opacity: 1 }, "-=1.5")
+	.to(
 		".header-stats, .explore-animation, .quote-swap",
-		{ yPercent: 100, opacity: 0, stagger: 0.2 },
+		{ transform: 'translateY(0%)', opacity: 1, stagger: 0.2 },
 		"-=1.5"
 	)
-	.from(".right-circle, .left-circle", { xPercent: -100, opacity: 0 }, "-=1.5");
+	.to(" .left-circle", {transform: 'translateX(0%)', opacity: 1 }, "-=1.5")
+	.to('.right-circle', {transform: 'translate(80%, 50%)', opacity: 1}, '-=2')
 header_tl.pause();
 locoScroll.stop();
 
