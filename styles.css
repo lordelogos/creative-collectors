@@ -15,9 +15,26 @@ html {
 	font-size: 16px;
 }
 
+/* @media screen and (max-width: 1100px) {
+	html {
+		font-size: 15px;
+	}
+} */
+
+@media screen and (max-width: 600px) {
+	html {
+		font-size: 14px;
+	}
+}
+
 body {
 	width: 100vw;
 	height: 100%;
+}
+
+html,
+body {
+	overflow-x: hidden;
 }
 
 ul {
@@ -51,6 +68,14 @@ header::before {
 	z-index: -1;
 }
 
+@media screen and (max-height: 780px) {
+	header,
+	header::before {
+		min-height: 880px;
+		height: 880px;
+	}
+}
+
 header nav {
 	width: 90%;
 	height: 10%;
@@ -65,7 +90,7 @@ header nav {
 	height: 50px;
 }
 
-header nav ul {
+header nav ul.wide {
 	display: flex;
 	align-items: center;
 	background: rgba(255, 255, 255, 0.16);
@@ -73,7 +98,7 @@ header nav ul {
 	border: solid 4px transparent;
 }
 
-header nav li {
+header nav ul.wide li {
 	padding: 16px;
 	font-size: 1rem;
 	letter-spacing: 1px;
@@ -81,7 +106,7 @@ header nav li {
 	color: #fff;
 }
 
-header nav button {
+header nav button.wide {
 	font-size: 1rem;
 	letter-spacing: 1px;
 	padding: 16px 48px;
@@ -90,11 +115,133 @@ header nav button {
 	color: #fff;
 }
 
+header .mobile-menu,
+header .mobile-navIcon,
+header .moblie-menu li,
+header .mobile-menuClose {
+	display: none;
+}
+
+@media screen and (max-width: 991px) {
+	header nav ul.wide,
+	header nav button.wide {
+		display: none;
+	}
+
+	header .mobile-navIcon {
+		display: block;
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: rgba(255, 255, 255, 0.32);
+		border: none;
+	}
+
+	header nav {
+		padding-top: 2rem;
+	}
+
+	header .mobile-menu {
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100vw;
+		padding: 0 2rem;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+		background: black;
+		z-index: 10;
+		transform: translateX(100%);
+		transition: 0.5s;
+	}
+
+	header .active-menu {
+		transform: translateX(0);
+	}
+
+	header .mobile-menu li {
+		color: white;
+		font-size: 2rem;
+		margin-bottom: 3rem;
+		position: relative;
+		cursor: pointer;
+	}
+
+	header .mobile-menu li:after {
+		content: "";
+		position: absolute;
+		display: block;
+		border-bottom: solid 4px #00cc66;
+		width: 10%;
+		transition: 0.3s;
+	}
+
+	header .mobile-menu li:hover::after {
+		width: 90%;
+	}
+
+	header .mobile-menu li:last-child::after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		border-bottom: none;
+		width: 0%;
+	}
+
+	header .mobile-menu li button {
+		font-size: 1.5rem;
+		letter-spacing: 1px;
+		padding: 16px 48px;
+		background: #00a352;
+		border: 4px dashed #00cc66;
+		color: #fff;
+	}
+
+	header .mobile-menuClose {
+		display: block;
+		fill: #fff;
+		width: 50px;
+		height: 50px;
+		position: absolute;
+		top: 2rem;
+		right: 5%;
+		padding: 10px;
+		background: rgba(255, 255, 255, 0.32);
+		border-radius: 50%;
+	}
+}
+
+@media screen and (max-width: 440px) {
+	header .mobile-menu li {
+		color: white;
+		font-size: 1.5rem;
+		margin-bottom: 3rem;
+		position: relative;
+		cursor: pointer;
+	}
+
+	header .mobile-menu li button {
+		font-size: 1rem;
+		letter-spacing: 1px;
+		padding: 16px 48px;
+		background: #00a352;
+		border: 4px dashed #00cc66;
+		color: #fff;
+	}
+}
+
 header section {
 	width: 90%;
 	height: 90%;
 	margin: 0 auto;
-	margin-top: clamp(5vh, 7.5rem, 80px);
+	margin-top: clamp(5%, 7.5rem, 80px);
 }
 
 header .right-circle,
@@ -139,6 +286,47 @@ header .right-circle {
 	font-size: 1rem;
 }
 
+@media screen and (max-width: 1300px) {
+	header section {
+		width: 90%;
+		height: 90%;
+		margin: 0 auto;
+		margin-top: clamp(4%, 3rem, 50px);
+	}
+}
+
+@media screen and (max-width: 600px) {
+	header section {
+		width: 90%;
+		height: 90%;
+		margin: 0 auto;
+		margin-top: clamp(4%, 3rem, 40px);
+	}
+
+	header .right-circle,
+	header .left-circle {
+		width: 62px;
+		height: 62px;
+		margin-left: 31.5px;
+	}
+
+	header .right-circle::after,
+	header .left-circle::after {
+		top: -31.5px;
+		left: -31.5px;
+		width: 115px;
+		height: 115px;
+	}
+
+	.circle-text {
+		font-size: 11px;
+	}
+
+	header .left-circle {
+		margin-bottom: calc(4rem + 31.5px);
+	}
+}
+
 header .main-header {
 	font-family: "Tomorrow", sans-serif;
 	font-weight: 600;
@@ -157,6 +345,75 @@ header .main-desc {
 header .mobile-desc {
 	width: 100%;
 	display: none;
+}
+
+@media screen and (max-width: 1300px) {
+	header .main-header {
+		font-family: "Tomorrow", sans-serif;
+		font-weight: 600;
+		font-size: 4.5rem;
+		color: #fff;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	header .main-header {
+		font-family: "Tomorrow", sans-serif;
+		font-weight: 600;
+		font-size: 3.5rem;
+		color: #fff;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	header .main-header {
+		font-family: "Tomorrow", sans-serif;
+		font-weight: 600;
+		font-size: 2.5rem;
+		color: #fff;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	header .main-desc {
+		display: none;
+	}
+
+	/* for responsive text */
+	header .mobile-desc {
+		width: 100%;
+		display: block;
+		margin: 1.5rem 0 3.5rem;
+		font-size: 1.5rem;
+		letter-spacing: initial;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	header .mobile-desc {
+		width: 100%;
+		display: block;
+		margin: 1.5rem 0 3.5rem;
+		font-size: 1.2rem;
+		letter-spacing: initial;
+	}
+}
+
+@media screen and (max-width: 300px) {
+	header .main-header {
+		font-family: "Tomorrow", sans-serif;
+		font-weight: 600;
+		font-size: 2rem;
+		color: #fff;
+	}
+
+	header .mobile-desc {
+		width: 100%;
+		display: block;
+		margin: 1.5rem 0 3.5rem;
+		font-size: 1rem;
+		letter-spacing: initial;
+	}
 }
 
 header .header-stats {
@@ -248,6 +505,79 @@ header .quote-controls button {
 	background: transparent;
 	border: dashed 3px rgba(255, 255, 255, 0.4);
 	padding: 5px 15px;
+}
+
+@media screen and (max-width: 1300px) {
+	header .header-stats {
+		display: flex;
+		align-items: center;
+		position: relative;
+		bottom: 0;
+	}
+
+	header .explore-animation {
+		bottom: 0.5rem;
+	}
+
+	header .explore-animation img {
+		margin-bottom: 1.5rem;
+	}
+
+	header .quote-swap {
+		bottom: 0.5rem;
+	}
+}
+
+@media screen and (max-width: 1100px) {
+	header .quote-swap {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 991px) {
+	header .header-stats h2 {
+		letter-spacing: 4.5px;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	header .header-stats h2 {
+		font-size: 1.5rem;
+		font-family: "Tomorrow", sans-serif;
+		margin-bottom: 1rem;
+		color: transparent;
+		-webkit-text-stroke-width: 1px;
+		-webkit-text-stroke-color: white;
+	}
+}
+
+@media screen and (max-width: 350px) {
+	header .header-stats h2 {
+		font-size: 1.3rem;
+		font-family: "Tomorrow", sans-serif;
+		margin-bottom: 1rem;
+		color: transparent;
+		-webkit-text-stroke-width: 1px;
+		-webkit-text-stroke-color: white;
+	}
+}
+
+@media screen and (max-width: 320px) {
+	header .header-stats h2 {
+		font-size: 1.1rem;
+		font-family: "Tomorrow", sans-serif;
+		margin-bottom: 1rem;
+		color: #fff;
+		-webkit-text-stroke-width: 0px;
+		-webkit-text-stroke-color: white;
+	}
+
+	header .header-stats p {
+		font-size: 0.9rem;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		color: white;
+	}
 }
 
 /* styles for page description linked images */
@@ -404,6 +734,50 @@ header .quote-controls button {
 	top: -43px;
 }
 
+@media screen and (max-width: 992px) {
+	.page-desc {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.page-desc .desc2 {
+		align-self: flex-end;
+		margin-top: 5rem;
+	}
+
+	.page-desc .desc1,
+	.page-desc .desc2 {
+		width: 75%;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.page-desc {
+		align-items: center;
+	}
+
+	.page-desc .desc1 {
+		width: 100%;
+	}
+
+	.page-desc .desc2 {
+		width: calc(100% - 75px);
+	}
+}
+
+@media screen and (max-width: 360px) {
+	.page-desc .desc2 .text p {
+		font-size: 0;
+	}
+
+	.page-desc .desc2 .text p:after {
+		display: block;
+		content: "The works of your hands are the inspirations that the world";
+		font-size: 0.875rem;
+		color: #666666;
+	}
+}
+
 /* NFT showcase carousel */
 .nft-showcase {
 	width: 100%;
@@ -419,7 +793,7 @@ header .quote-controls button {
 	flex-direction: column;
 	align-items: flex-start;
 	width: 488px;
-	margin-right: 51px;
+	margin: 0 25.5px;
 	transform-style: preserve-3d;
 }
 
@@ -429,7 +803,9 @@ header .quote-controls button {
 
 .nft-image {
 	width: 100%;
-	height: 668px;
+	aspect-ratio: 488 / 668;
+	/* height: 668px; */
+	height: auto;
 	background: red;
 	display: flex;
 	align-items: flex-end;
@@ -538,6 +914,19 @@ header .quote-controls button {
 	border-radius: 1.5rem;
 }
 
+@media screen and (max-width: 319px) {
+	.nft-image div p:last-child {
+		font-size: 1.125rem;
+		padding: 0.5rem;
+		border: 3px dashed rgba(255, 255, 255, 0.24);
+		border-radius: 1.5rem;
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+		background: black;
+	}
+}
+
 .nft-item > h3 {
 	font-size: 1rem;
 	line-height: 20px;
@@ -552,6 +941,7 @@ header .quote-controls button {
 	font-size: 1rem;
 	color: #616161;
 	margin-bottom: 0.5rem;
+	height: 80px;
 }
 
 .nft-item > button {
@@ -567,7 +957,13 @@ header .quote-controls button {
 	text-transform: uppercase;
 }
 
-.glider-persp .glider-slide.left-1 {
+@media screen and (max-width: 767px) {
+	.nft-item > button {
+		padding: 20px 0;
+	}
+}
+
+/* .glider-persp .glider-slide.left-1 {
 	-webkit-transform: perspective(3000px) rotateY(34deg) translateZ(0);
 	-webkit-transform-origin: 100% 50% 0;
 	transform: perspective(3000px) rotateY(34deg) translateZ(0);
@@ -580,6 +976,91 @@ header .quote-controls button {
 	transform: perspective(3000px) rotateY(-34deg) translateZ(0);
 	transform-origin: 0 50% 0;
 }
+
+.glider-persp .glider-slide.right-2 {
+	-webkit-transform: perspective(0) rotateY(0) translateZ(0);
+	-webkit-transform-origin: 0 0% 0;
+	transform: perspective(0px) rotateY(0) translateZ(0);
+	transform-origin: 0 0% 0;
+}
+
+@media screen and (min-width: 440px) {
+	.glider-persp .glider-slide.left-1 {
+		-webkit-transform: perspective(3000px) rotateY(34deg) translateZ(0);
+		-webkit-transform-origin: 100% 50% 0;
+		transform: perspective(3000px) rotateY(34deg) translateZ(0);
+		transform-origin: 100% 50% 0;
+	}
+
+	.glider-persp .glider-slide.right-2 {
+		-webkit-transform: perspective(3000px) rotateY(-34deg) translateZ(0);
+		-webkit-transform-origin: 0 50% 0;
+		transform: perspective(3000px) rotateY(-34deg) translateZ(0);
+		transform-origin: 0 50% 0;
+	}
+
+	.glider-persp .glider-slide.right-2 {
+		-webkit-transform: perspective(0) rotateY(0) translateZ(0);
+		-webkit-transform-origin: 0 0% 0;
+		transform: perspective(0px) rotateY(0) translateZ(0);
+		transform-origin: 0 0% 0;
+	}
+}
+@media screen and (min-width: 768px), (max-width: 767px) {
+	.glider-persp .glider-slide.left-1,
+	.glider-persp .glider-slide.right-1,
+	.glider-persp .glider-slide.right-2 {
+		-webkit-transform: perspective(0) rotateY(0) translateZ(0);
+		-webkit-transform-origin: 0 0% 0;
+		transform: perspective(0px) rotateY(0) translateZ(0);
+		transform-origin: 0 0% 0;
+	}
+}
+@media screen and (min-width: 1200px) {
+	.glider-persp .glider-slide.left-1 {
+		-webkit-transform: perspective(3000px) rotateY(34deg) translateZ(0);
+		-webkit-transform-origin: 100% 50% 0;
+		transform: perspective(3000px) rotateY(34deg) translateZ(0);
+		transform-origin: 100% 50% 0;
+	}
+
+	.glider-persp .glider-slide.right-1 {
+		-webkit-transform: perspective(3000px) rotateY(-34deg) translateZ(0);
+		-webkit-transform-origin: 0 50% 0;
+		transform: perspective(3000px) rotateY(-34deg) translateZ(0);
+		transform-origin: 0 50% 0;
+	}
+
+	.glider-persp .glider-slide.right-2 {
+		-webkit-transform: perspective(0) rotateY(0) translateZ(0);
+		-webkit-transform-origin: 0 0% 0;
+		transform: perspective(0px) rotateY(0) translateZ(0);
+		transform-origin: 0 0% 0;
+	}
+}
+
+@media screen and (min-width: 1600px) {
+	.glider-persp .glider-slide.left-2 {
+		-webkit-transform: perspective(3000px) rotateY(34deg) translateZ(0);
+		-webkit-transform-origin: 100% 50% 0;
+		transform: perspective(3000px) rotateY(34deg) translateZ(0);
+		transform-origin: 100% 50% 0;
+	}
+
+	.glider-persp .glider-slide.right-1 {
+		-webkit-transform: perspective(3000px) rotateY(-34deg) translateZ(0);
+		-webkit-transform-origin: 0 50% 0;
+		transform: perspective(3000px) rotateY(-34deg) translateZ(0);
+		transform-origin: 0 50% 0;
+	}
+
+	.glider-persp .glider-slide.left-1 {
+		-webkit-transform: perspective(0) rotateY(0) translateZ(0);
+		-webkit-transform-origin: 0 0% 0;
+		transform: perspective(0px) rotateY(0) translateZ(0);
+		transform-origin: 0 0% 0;
+	}
+} */
 
 /* Artist showcase */
 
@@ -673,8 +1154,9 @@ header .quote-controls button {
 }
 
 .artist-section img {
-	width: 455px;
-	height: 654px;
+	width: 100%;
+	height: auto;
+	aspect-ratio: 455 / 654;
 }
 
 .artist-section .showcase1 {
@@ -696,7 +1178,7 @@ header .quote-controls button {
 }
 
 .artist-section .showcase-text {
-	width: 50%;
+	width: 60%;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
@@ -795,6 +1277,69 @@ header .quote-controls button {
 	right: 0;
 }
 
+@media screen and (max-width: 1160px) {
+	.artist-showcase .artist-section {
+		flex-direction: column;
+		margin-bottom: 150px;
+	}
+	.artist-showcase .artist-section.artist2 {
+		flex-direction: column-reverse;
+		margin-bottom: 0px;
+	}
+	.artist-section .showcase-holder {
+		max-width: 60%;
+		height: auto;
+		perspective: 2500px;
+		margin-bottom: 50px;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	.artist-showcase .showcase-cta {
+		text-transform: uppercase;
+		font-size: 1.5rem;
+		letter-spacing: 10px;
+		color: rgba(255, 255, 255, 0.7);
+	}
+
+	.artist-section .showcase-text {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+}
+
+@media screen and (max-width: 690px) {
+	.artist-showcase .showcase-cta {
+		text-transform: uppercase;
+		font-size: 1.5rem;
+		letter-spacing: 5px;
+	}
+}
+
+@media screen and (max-width: 460px) {
+	.artist-showcase .showcase-cta {
+		text-transform: uppercase;
+		font-size: 1.5rem;
+		letter-spacing: 2px;
+	}
+}
+
+@media screen and (max-width: 380px) {
+	.artist-showcase .showcase-cta {
+		font-size: 1.2rem;
+		letter-spacing: 2px;
+	}
+}
+
+@media screen and (max-width: 340px) {
+	.artist-showcase .showcase-cta {
+		font-size: 1rem;
+		letter-spacing: 1px;
+	}
+}
+
 footer {
 	margin-top: 1rem;
 	background: url("./assets/artist-bg.jpg");
@@ -812,4 +1357,12 @@ footer ul li {
 	font-size: 1rem;
 	border: 3px dashed rgba(255, 255, 255, 0.3);
 	padding: 8px 15px;
+}
+
+@media screen and (max-width: 440px) {
+	footer ul {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+	}
 }

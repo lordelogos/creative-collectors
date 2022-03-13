@@ -3,7 +3,10 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, minimum-scale=1"
+		/>
 		<title>NFT marketplace | Where Collectors meet Creatives</title>
 		<link rel="stylesheet" href="./libs/glider.min.css" />
 		<link rel="stylesheet" href="styles.css" />
@@ -32,13 +35,34 @@
 					<!-- come back to change fill color -->
 				</svg>
 
-				<ul>
+				<ul class="wide">
 					<li>Marketplace</li>
 					<li>Creative Orbit</li>
 					<li>Collectors league</li>
 				</ul>
 
-				<button>Link Wallet</button>
+				<button class="wide">Link Wallet</button>
+
+				<button class="mobile-navIcon">
+					<!-- menu icon -->
+					<img src="./assets/menu.svg" alt="mobile menu icon" />
+				</button>
+
+				<ul class="mobile-menu">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 24 24"
+						class="mobile-menuClose"
+					>
+						<path
+							d="M13.41,12l6.3-6.29a1,1,0,1,0-1.42-1.42L12,10.59,5.71,4.29A1,1,0,0,0,4.29,5.71L10.59,12l-6.3,6.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0L12,13.41l6.29,6.3a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42Z"
+						/>
+					</svg>
+					<li>Marketplace</li>
+					<li>Creative Orbit</li>
+					<li>Collectors league</li>
+					<li><button>Link Wallet</button></li>
+				</ul>
 			</nav>
 
 			<section>
@@ -231,7 +255,7 @@
 		</section>
 
 		<!-- NFT showcase -->
-		<section class="nft-showcase glider-persp">
+		<section class="nft-showcase">
 			<div class="nft-item">
 				<div class="nft-image" id="nft1">
 					<div>
@@ -453,7 +477,7 @@
 			</div>
 
 			<!-- artist segment -->
-			<div class="artist-section">
+			<div class="artist-section artist2">
 				<div class="showcase-text">
 					<div>
 						<!-- clock with arrow animation -->
