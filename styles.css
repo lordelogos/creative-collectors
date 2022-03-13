@@ -46,6 +46,178 @@ button {
 	cursor: pointer;
 }
 
+#preloader {
+	position: fixed;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+	padding: 2rem 0;
+	background: url(./assets/artist-bg.jpg);
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#preloader > h2 {
+	position: absolute;
+	top: 1rem;
+	right: 2rem;
+	font-family: "Tomorrow", sans-serif;
+	font-weight: 400;
+	font-size: 4rem;
+	color: rgba(255, 255, 255, 0.7);
+}
+
+#preloader > h2 > span {
+	font-family: "Tomorrow", sans-serif;
+}
+
+@media screen and (max-width: 440px) {
+	#preloader > h2 {
+		font-size: 3rem;
+	}
+}
+
+#preloader > div {
+	display: flex;
+	width: 90%;
+	max-width: 640px;
+	margin: auto;
+	align-items: center;
+}
+
+#preloader > div > p {
+	font-family: "Tomorrow", sans-serif;
+	font-weight: 400;
+	font-size: 1.5rem;
+	line-height: 36px;
+}
+
+#preloader > div > p:last-child {
+	text-align: right;
+}
+
+#preloader > div > img {
+	margin: 0 0.5rem;
+}
+
+#preloader > p {
+	font-family: "Tomorrow", sans-serif;
+	font-size: 1.5rem;
+	letter-spacing: 1.5rem;
+	position: relative;
+}
+
+#preloader > p::after {
+	content: "";
+	position: absolute;
+	z-index: 1;
+	bottom: 0;
+	left: 0;
+	pointer-events: none;
+	background-image: linear-gradient(
+		to bottom,
+		rgba(255, 255, 255, 0),
+		rgba(0, 0, 0, 0.3) 56.25%,
+		rgba(0, 0, 0, 1) 90%
+	);
+	width: 100%;
+	height: 1.5em;
+}
+
+@media screen and (max-width: 1240px) {
+	#preloader > p {
+		letter-spacing: 1rem;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	#preloader > p {
+		letter-spacing: 0.75rem;
+	}
+}
+
+@media screen and (max-width: 860px) {
+	#preloader > p {
+		letter-spacing: 8px;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	#preloader > p {
+		letter-spacing: 4px;
+	}
+}
+
+@media screen and (max-width: 670px) {
+	#preloader > div > p {
+		font-family: "Tomorrow", sans-serif;
+		font-weight: 400;
+		font-size: 1rem;
+		line-height: 1.5rem;
+	}
+
+	#preloader > div > p > span {
+		font-size: 24px;
+	}
+}
+
+@media screen and (max-width: 540px) {
+	#preloader > p {
+		letter-spacing: 2px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	#preloader > div > p {
+		font-family: "Tomorrow", sans-serif;
+		font-weight: 400;
+		font-size: 1rem;
+		line-height: 1.5rem;
+	}
+
+	#preloader > div > p > span {
+		font-size: 24px;
+	}
+
+	#preloader > div > img {
+		width: 100px;
+		height: auto;
+	}
+}
+
+@media screen and (max-width: 410px) {
+	#preloader > p {
+		font-size: 12px;
+		letter-spacing: 2px;
+	}
+
+	#preloader > p::after {
+		height: 12px;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	#preloader > div > p {
+		font-family: "Tomorrow", sans-serif;
+		font-weight: 400;
+		font-size: 12px;
+		line-height: 18px;
+	}
+
+	#preloader > div > p > span {
+		font-size: 24px;
+	}
+
+	#preloader > div > img {
+		width: 84px;
+		height: auto;
+	}
+}
+
 header {
 	width: 100vw;
 	height: 100vh;
@@ -264,6 +436,23 @@ header .left-circle::after {
 	height: 154px;
 	border-radius: 50%;
 	border: 3px dashed rgba(255, 255, 255, 0.4);
+	animation: rotate infinite 3s ease-in-out;
+	animation-play-state: paused;
+}
+
+header .left-circle:hover::after,
+header .right-circle:hover::after {
+	animation-play-state: running;
+}
+
+@keyframes rotate {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
 }
 
 header .left-circle {
@@ -468,6 +657,18 @@ header .explore-animation img {
 	margin-bottom: 2.4rem;
 	width: 33.87px;
 	height: 40px;
+	animation: bounce infinite 2s ease-in-out;
+}
+
+@keyframes bounce {
+	from,
+	to {
+		transform: translateY(0);
+	}
+
+	50% {
+		transform: translateY(-20px);
+	}
 }
 
 header .explore-animation p {
@@ -1136,12 +1337,57 @@ header .quote-controls button {
 	font-size: 7.5rem;
 	content: "AREOUS";
 	letter-spacing: 40px;
-
 	color: rgba(255, 255, 255, 0.04);
 	font-family: "Tomorrow", sans-serif;
 	position: absolute;
 	left: 0;
 	bottom: 45px;
+}
+
+@media screen and (max-width: 767px) {
+	.artist-showcase .main-header {
+		font-size: 2rem;
+		font-family: "Tomorrow", sans-serif;
+		letter-spacing: 40px;
+		position: relative;
+		color: rgba(255, 255, 255, 0.16);
+	}
+
+	.artist-showcase .main-header::after {
+		font-size: 2rem;
+		font-weight: 600;
+		right: 1rem;
+	}
+
+	.artist-showcase .main-shadow {
+		font-size: 32px;
+		letter-spacing: 40px;
+		bottom: 30px;
+	}
+
+	.artist-showcase .main-shadow::after {
+		font-size: 32px;
+		letter-spacing: 40px;
+		bottom: 30px;
+	}
+}
+
+@media screen and (max-width: 440px) {
+	.artist-showcase .main-header {
+		letter-spacing: 10px;
+	}
+
+	.artist-showcase .main-header::after {
+		right: 0rem;
+	}
+
+	.artist-showcase .main-shadow {
+		letter-spacing: 10px;
+	}
+
+	.artist-showcase .main-shadow::after {
+		letter-spacing: 10px;
+	}
 }
 
 .artist-showcase .artist-section {
@@ -1150,7 +1396,7 @@ header .quote-controls button {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin-bottom: 150px;
+	margin: 50px auto 150px;
 }
 
 .artist-section img {
@@ -1277,6 +1523,10 @@ header .quote-controls button {
 	right: 0;
 }
 
+.clock-mobile {
+	display: none;
+}
+
 @media screen and (max-width: 1160px) {
 	.artist-showcase .artist-section {
 		flex-direction: column;
@@ -1310,19 +1560,95 @@ header .quote-controls button {
 	}
 }
 
-@media screen and (max-width: 690px) {
+@media screen and (max-width: 767px) {
+	.artist-section .showcase-text > div {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	#clock1,
+	#clock2 {
+		margin: auto 0 0;
+	}
+
+	.artist-section .showcase-text img {
+		width: 40%;
+		max-width: 200px;
+		margin-right: 0%;
+		height: auto;
+	}
+
+	.artist-section .showcase-text p {
+		width: 45%;
+		color: rgba(255, 255, 255, 0.7);
+		font-size: 1rem;
+	}
+
+	.artist-section .showcase-text p span {
+		font-size: 2rem;
+		font-family: "Tomorrow", sans-serif;
+	}
+	.artist-section .showcase-text ul {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		margin-top: 40px;
+	}
+
+	.artist-section .showcase-text li {
+		width: 45%;
+		position: relative;
+		color: rgba(255, 255, 255, 0.7);
+	}
+
+	.artist-section .showcase-text li:last-child {
+		margin-top: 30px;
+	}
+}
+
+@media screen and (max-width: 600px) {
 	.artist-showcase .showcase-cta {
 		text-transform: uppercase;
 		font-size: 1.5rem;
 		letter-spacing: 5px;
 	}
+
+	.artist-section .showcase-text img {
+		width: 50%;
+		max-width: 200px;
+		margin-right: 0%;
+		height: auto;
+	}
+
+	.artist-section .showcase-holder {
+		max-width: 90%;
+		height: auto;
+		perspective: 2500px;
+		margin-bottom: 50px;
+	}
+
+	.clock-pc {
+		display: none;
+	}
+
+	.clock-mobile {
+		display: block;
+	}
 }
 
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 440px) {
 	.artist-showcase .showcase-cta {
 		text-transform: uppercase;
 		font-size: 1.5rem;
 		letter-spacing: 2px;
+	}
+
+	.artist-section .showcase-holder {
+		max-width: 100%;
+		height: auto;
+		perspective: 2500px;
+		margin-bottom: 50px;
 	}
 }
 

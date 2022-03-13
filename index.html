@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="smooth-scroll">
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -8,12 +8,33 @@
 			content="width=device-width, initial-scale=1.0, minimum-scale=1"
 		/>
 		<title>NFT marketplace | Where Collectors meet Creatives</title>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"
+		/>
 		<link rel="stylesheet" href="./libs/glider.min.css" />
 		<link rel="stylesheet" href="styles.css" />
-
 		<script src="./libs/glider.min.js"></script>
 	</head>
 	<body>
+		<div class="cursor"></div>
+		<!-- preloader -->
+		<div id="preloader">
+			<h2><span>100</span>%</h2>
+			<div>
+				<p>
+					<span>The</span>&nbsp;internet is not bad for creative people. Web2 is
+					bad for creative people.- <br />@cdixon
+				</p>
+				<img src="./assets/loader-icon.svg" alt="loader-icon" />
+				<p>
+					<span>The</span>&nbsp;desire to create is one of the deepest yearnings
+					of the human soul.- <br />Dieter F. Uchtdorf
+				</p>
+			</div>
+
+			<p>The orbit of creatives & collectors</p>
+		</div>
 		<!-- header starts -->
 		<header>
 			<nav>
@@ -140,7 +161,7 @@
 
 		<!-- Page description section -->
 		<section class="page-desc">
-			<div class="desc1">
+			<div class="desc1" class="parallax" data-speed=".07">
 				<h2>Creatives among <span>collector$</span></h2>
 				<!-- <p>
 					The gap between Creatives and and collectors was the burden over the
@@ -163,7 +184,7 @@
 			</div>
 
 			<!-- text with mapped images -->
-			<div class="desc2">
+			<div class="desc2" class="parallax" data-speed=".1">
 				<!-- mapped images with text -->
 				<div class="linked-img" id="l1">
 					<div>
@@ -432,17 +453,19 @@
 				<h1 class="main-header">AREOUS</h1>
 			</div>
 			<!-- artist segment -->
-			<div class="artist-section">
+			<div class="artist-section artist1">
 				<div class="showcase-holder">
 					<img
 						src="./assets/artist1.png"
 						alt="artist showcase"
 						class="showcase1"
+						class="parallax"
+						data-speed=".01"
 					/>
 				</div>
 				<div class="showcase-text">
 					<div>
-						<p>
+						<p class="parallax" data-speed=".02">
 							<span>Yossi Kotler</span> is an established Israeli painter who
 							has exhibited his work in Tel Aviv. Drawing inspiration from walks
 							in nature, he primarily composes paintings with a central,
@@ -452,11 +475,24 @@
 							them to complete.
 						</p>
 						<!-- clock with arrow animation -->
-						<img src="./assets/clock.svg" alt="clock animation" id="clock1" />
+						<img
+							src="./assets/clock.svg"
+							alt="clock animation"
+							class="clock-pc parallax"
+							id="clock1"
+							data-speed=".02"
+						/>
+						<img
+							data-speed=".02"
+							src="./assets/clock-mobile.svg"
+							alt="clock animation"
+							class="parallax clock-mobile"
+							id="clock1"
+						/>
 					</div>
 
 					<ul>
-						<li>
+						<li class="parallax" data-speed=".02">
 							« My art is integrating the beauties of nature with a mysterious
 							femininity that wraps around it. »
 							<!-- eye animation -->
@@ -464,11 +500,11 @@
 								<img src="./assets/👀.svg" alt="eye-animation" />
 							</span>
 						</li>
-						<li>
+						<li class="parallax" data-speed=".02">
 							« Drawing inspiration from walks in nature, he primarily composes
 							paintings with a central. »
 						</li>
-						<li>
+						<li class="parallax" data-speed=".02">
 							« Mysterious female figure, from which swirling shapes and lines
 							evolve. The piercing intricate mysteries »
 						</li>
@@ -481,9 +517,22 @@
 				<div class="showcase-text">
 					<div>
 						<!-- clock with arrow animation -->
-						<img src="./assets/clock.svg" alt="clock animation" id="clock2" />
+						<img
+							src="./assets/clock.svg"
+							alt="clock animation"
+							class="clock-pc parallax"
+							data-speed=".02"
+							id="clock2"
+						/>
+						<img
+							src="./assets/clock-mobile.svg"
+							alt="clock animation"
+							class="clock-mobile parallax"
+							data-speed=".02"
+							id="clock2"
+						/>
 
-						<p>
+						<p class="parallax" data-speed=".02">
 							Zuzana Breznanikova is a multi-disciplinary artist based in London
 							telling stories through multiple mediums; inspired by art, nature,
 							cinema, psychology and modern technology. Her artwork is often
@@ -496,15 +545,15 @@
 					</div>
 
 					<ul>
-						<li>
+						<li class="parallax" data-speed=".02">
 							« full time artist creating mix of media art sharing my creative.
 							»
 						</li>
-						<li>
+						<li class="parallax" data-speed=".02">
 							« awareness consciousness with the world through impactful
 							visuals. »
 						</li>
-						<li>
+						<li class="parallax" data-speed=".02">
 							« Her ultra-contemporary artwork often displays the harmony of
 							classic high art »
 						</li>
@@ -539,6 +588,8 @@
 			</ul>
 		</footer>
 	</body>
-
+	<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
 	<script src="main.js"></script>
 </html>
