@@ -196,10 +196,11 @@ header_tl
 	.to("header .main-header", { transform: 'translateY(0%)', opacity: 1, delay: 0.5 })
 	.to(".main-desc", { transform: 'translateY(0%)', opacity: 1 }, "-=1.5")
 	.to(
-		".header-stats, .explore-animation, .quote-swap",
+		".header-stats, .quote-swap",
 		{ transform: 'translateY(0%)', opacity: 1, stagger: 0.2 },
 		"-=1.5"
 	)
+	.to('.explore-animation', {transform: 'translate(-50%, 0%)', opacity: 1}, '-=1.8')
 	.to(" .left-circle", {transform: 'translateX(0%)', opacity: 1 }, "-=1.5")
 	.to('.right-circle', {transform: 'translate(80%, 50%)', opacity: 1}, '-=2')
 header_tl.pause();

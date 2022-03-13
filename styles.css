@@ -668,7 +668,7 @@ header .explore-animation {
 	align-items: center;
 	justify-content: center;
 	text-align: center;
-	transform: translateY(100%);
+	transform: translate(-50%, 100%);
 	opacity: 0;
 }
 
