@@ -260,6 +260,8 @@ header nav {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	opacity: 0;
+	transform: translateY(100%);
 }
 
 #nav-logo {
@@ -325,6 +327,7 @@ header .mobile-menuClose {
 		position: fixed;
 		top: 0;
 		left: 0;
+		min-height: 100vh;
 		height: 100%;
 		width: 100vw;
 		padding: 0 2rem;
@@ -1365,7 +1368,7 @@ header .quote-controls button {
 	bottom: 45px;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 800px) {
 	.artist-showcase .main-header {
 		font-size: 2rem;
 		font-family: "Tomorrow", sans-serif;
