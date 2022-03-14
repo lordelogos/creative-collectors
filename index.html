@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="smooth-scroll">
+<html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -14,9 +14,10 @@
 			href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"
 		/>
 		<link rel="stylesheet" href="./libs/glider.min.css" />
+		<link rel="icon" href="./assets/logo.svg" sizes="16x16" />
 		<script src="./libs/glider.min.js"></script>
 	</head>
-	<body>
+	<body class="smooth-scroll" data-scroll-container>
 		<!-- preloader -->
 		<div id="preloader">
 			<h2><span>100</span>%</h2>
@@ -35,7 +36,7 @@
 			<p>The orbit of creatives & collectors</p>
 		</div>
 		<!-- header starts -->
-		<header>
+		<header data-scroll-section>
 			<nav>
 				<!-- logo goes here -->
 				<svg
@@ -56,9 +57,9 @@
 				</svg>
 
 				<ul class="wide">
-					<li>Marketplace</li>
-					<li>Creative Orbit</li>
-					<li>Collectors league</li>
+					<li class="li-link">Marketplace</li>
+					<li class="li-link">Creative Orbit</li>
+					<li class="li-link">Collectors league</li>
 				</ul>
 
 				<button class="wide">Link Wallet</button>
@@ -159,7 +160,7 @@
 		<!-- header ends -->
 
 		<!-- Page description section -->
-		<section class="page-desc">
+		<section class="page-desc" data-scroll-section>
 			<div class="desc1" class="parallax" data-speed=".07">
 				<h2>Creatives among <span>collector$</span></h2>
 				<!-- <p>
@@ -275,7 +276,7 @@
 		</section>
 
 		<!-- NFT showcase -->
-		<section class="nft-showcase">
+		<section class="nft-showcase" data-scroll-section>
 			<div class="nft-item">
 				<div class="nft-image" id="nft1">
 					<div>
@@ -443,7 +444,7 @@
 		<!-- NFT marketplace ends -->
 
 		<!-- Artist's showcase section -->
-		<section class="artist-showcase">
+		<section class="artist-showcase" data-scroll-section>
 			<span class="eye-animation">
 				<img src="./assets/👀.svg" alt="eye-icon" />
 			</span>
@@ -577,14 +578,17 @@
 		<!-- artist showcase ends -->
 
 		<!-- footer section -->
-		<footer>
+		<footer data-scroll-section>
 			<ul>
-				<li>Legal terms</li>
-				<li>Creatives</li>
-				<li>Pinterest</li>
-				<li>Awards</li>
+				<li class="li-link">Legal terms</li>
+				<li class="li-link">Creatives</li>
+				<li class="li-link">Pinterest</li>
+				<li class="li-link">Awards</li>
 			</ul>
 		</footer>
+		<svg class="cursor" width="32" ref="cursor" height="32" viewBox="0 0 20 20">
+			<circle class="cursor__inner" cx="10" cy="10" r="5" />
+		</svg>
 	</body>
 	<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>

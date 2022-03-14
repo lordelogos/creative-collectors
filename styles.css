@@ -223,15 +223,6 @@ button {
 	}
 }
 
-header {
-	width: 100vw;
-	height: 100vh;
-	display: flex;
-	flex-direction: column;
-	background-color: rgba(0, 10, 5, 0.8);
-	position: relative;
-}
-
 header::before {
 	position: absolute;
 	content: "";
@@ -239,10 +230,20 @@ header::before {
 	left: 0;
 	width: 100vw;
 	height: 100vh;
-	background-image: url(./assets/bg.jpg);
+	background: url("./assets/bg.jpg") rgba(0, 10, 5, 0.8);
 	background-repeat: no-repeat;
 	background-size: cover;
+	background-blend-mode: multiply;
 	z-index: -1;
+}
+
+header {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	background-color: transparent;
+	position: relative;
 }
 
 @media screen and (max-height: 780px) {
@@ -292,6 +293,11 @@ header nav button.wide {
 	background: #00a352;
 	border: 4px dashed #00cc66;
 	color: #fff;
+	transition: 300ms;
+}
+
+header button.wide:hover {
+	background: rgba(255, 255, 255, 0.16);
 }
 
 header .mobile-menu,
@@ -1180,6 +1186,12 @@ header .quote-controls button {
 	font-size: 1rem;
 	font-weight: 600;
 	text-transform: uppercase;
+	transition: 300ms;
+}
+
+.nft-item > button:hover {
+	background: rgba(255, 255, 255, 0.16);
+	color: #00a352;
 }
 
 @media screen and (max-width: 767px) {
@@ -1714,5 +1726,34 @@ footer ul li {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: 1fr 1fr;
+	}
+}
+
+/* custom cursor styling */
+.cursor {
+	display: none;
+}
+
+@media (any-pointer: fine) {
+	.cursor {
+		position: fixed;
+		top: 0;
+		left: 0;
+		display: block;
+		pointer-events: none;
+		z-index: 1000;
+	}
+}
+
+.cursor__inner {
+	fill: #00a352;
+	stroke: none;
+	stroke-width: 1px;
+	opacity: 0.7;
+}
+
+@media screen and (max-width: 767px) {
+	.cursor {
+		display: none;
 	}
 }
