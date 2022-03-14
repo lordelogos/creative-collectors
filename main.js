@@ -7,7 +7,6 @@ let el = document.querySelector(".nft-showcase");
 // 	cursor.setAttribute('style', `top: ${e.clientY}px; left: ${e.clientX}px`);
 // });
 
-
 // initializing nft showcase
 const glider = new Glider(el, {
 	slidesToShow: 1,
@@ -133,7 +132,6 @@ startTimeout();
 // menuOpenBtn.addEventListener("click", () => toggleMenu("open"));
 // menuCloseBtn.addEventListener("click", () => toggleMenu("close"));
 
-
 gsap.registerPlugin("ScrollTrigger");
 
 // setting up locomotive scroll
@@ -176,8 +174,16 @@ ScrollTrigger.scrollerProxy(".smooth-scroll", {
 let preload_tl = gsap.timeline({ defaults: { ease: "power4.inOut" } });
 
 preload_tl
-	.to("#preloader div", { transform: 'translateY(0%)', opacity: 1, duration: 2 })
-	.to("#preloader > p", { transform: 'translateY(0%)', opacity: 1, duration: 1 }, "-=1");
+	.to("#preloader div", {
+		transform: "translateY(0%)",
+		opacity: 1,
+		duration: 2,
+	})
+	.to(
+		"#preloader > p",
+		{ transform: "translateY(0%)", opacity: 1, duration: 1 },
+		"-=1"
+	);
 
 let loadCounter = gsap.timeline({ defaults: { ease: "power4.inOut" } });
 
@@ -202,96 +208,153 @@ let header_tl = gsap.timeline({
 });
 
 header_tl
-.to('header nav', {transform: 'translateY(0%)', opacity: 1})
-	.to("header .main-header", { transform: 'translateY(0%)',opacity: 1, delay: 0.5 }, '-=2')
-	.to(".main-desc", { transform: 'translateY(0%)', opacity: 1 }, "-=1.5")
+	.to("header nav", { transform: "translateY(0%)", opacity: 1 })
+	.to(
+		"header .main-header",
+		{ transform: "translateY(0%)", opacity: 1, delay: 0.5 },
+		"-=2"
+	)
+	.to(".main-desc", { transform: "translateY(0%)", opacity: 1 }, "-=1.5")
 	.to(
 		".header-stats, .quote-swap",
-		{ transform: 'translateY(0%)', opacity: 1 },
+		{ transform: "translateY(0%)", opacity: 1 },
 		"-=1.5"
 	)
-	.to('.explore-animation', {transform: 'translate(-50%, 0%)', opacity: 1}, '-=2')
-	.to(" .left-circle", {transform: 'translateX(0%)', opacity: 1 }, "-=2")
-	.to('.right-circle', {transform: 'translate(80%, 50%)', opacity: 1}, '-=2')
+	.to(
+		".explore-animation",
+		{ transform: "translate(-50%, 0%)", opacity: 1 },
+		"-=2"
+	)
+	.to(" .left-circle", { transform: "translateX(0%)", opacity: 1 }, "-=2")
+	.to(".right-circle", { transform: "translate(80%, 50%)", opacity: 1 }, "-=2");
 header_tl.pause();
 locoScroll.stop();
 
 // page description section
-let page_tl = gsap.timeline({defaults: {duration: 1.5, ease: "power2.inOut"}, scrollTrigger: {
-	trigger: ".page-desc",
-	toggleActions: "play none none reset"
-}})
-
-page_tl.from('.desc2', {xPercent: 20, opacity: 0})
-
-// artist showcase animation
-let artist_tl = gsap.timeline({defaults: { ease: 'power2.inOut'}, scrollTrigger:{
-	trigger: ".artist-showcase",
-	toggleActions: 'play none none reset'
-}})
-
-artist_tl.from('.artist-header-animation > .main-header', {xPercent: 20, opacity: 0, duration: 2})
-
-ScrollTrigger.matchMedia({
-	//mobile
-	"(max-width: 767px)": function () {
-		gsap.from('.artist1 .showcase-text', {opacity: 0, yPercent: 100, duration: 2,
-			scrollTrigger:{
-				trigger: '.artist1', 
-				toggleActions: 'play none none reset'
-			}})
-		
-		gsap.from('.artist1 .showcase1', {xPercent: -50, opacity: 0, duration: 2, scrollTrigger:{
-				trigger: '.artist1 ', 
-				toggleActions: 'play none none reset'
-			}})
-		
-		gsap.from('.artist2 .showcase-text', {opacity: 0, yPercent: 100, duration: 2,
-				scrollTrigger:{
-					trigger: '.artist2', 
-					toggleActions: 'play none none reset'
-				}})
-		
-		gsap.from('.artist2 .showcase2', {xPercent: 50, opacity: 0, duration:2, scrollTrigger:{
-			trigger: '.artist2', 
-			toggleActions: 'play none none reset'
-		}})
-		
-	},
-	
-	// desktop
-	"(min-width: 768px)": function () {
-		gsap.from('.artist1 .showcase-text', {opacity: 0, yPercent: 100, 
-			scrollTrigger:{
-				trigger: '.artist1', 
-				scrub: true,
-			}})
-		
-		gsap.from('.artist1 .showcase1', {xPercent: -50, opacity: 0, scrollTrigger:{
-				trigger: '.artist1 ', 
-				scrub: true,
-			}})
-		
-		gsap.from('.artist2 .showcase-text', {opacity: 0, yPercent: 100,	
-				scrollTrigger:{
-					trigger: '.artist2', 
-					scrub: true,
-				}})
-		
-		gsap.from('.artist2 .showcase2', {xPercent: 50, opacity: 0, scrollTrigger:{
-			trigger: '.artist2', 
-			scrub: true,
-		}})
-		
-	},
-
-	//all
-	all: function () {
-		// ScrollTriggers created here aren't associated with a particular media query,
-		// so they persist.
+let page_tl = gsap.timeline({
+	defaults: { duration: 1.5, ease: "power2.inOut" },
+	scrollTrigger: {
+		trigger: ".page-desc",
+		toggleActions: "play none none reset",
 	},
 });
 
+page_tl.from(".desc2", { xPercent: 20, opacity: 0 });
+
+// artist showcase animation
+let artist_tl = gsap.timeline({
+	defaults: { ease: "power2.inOut" },
+	scrollTrigger: {
+		trigger: ".artist-showcase",
+		toggleActions: "play none none reset",
+	},
+});
+
+artist_tl.from(".artist-header-animation > .main-header", {
+	xPercent: 20,
+	opacity: 0,
+	duration: 2,
+});
+
+// ScrollTrigger.matchMedia({
+// 	//mobile
+// 	"(max-width: 767px)": function () {
+// 		gsap.from('.artist1 .showcase-text', {opacity: 0, yPercent: 100, duration: 2,
+// 			scrollTrigger:{
+// 				trigger: '.artist1',
+// 				toggleActions: 'play none none reset'
+// 			}})
+
+// 		gsap.from('.artist1 .showcase1', {xPercent: -50, opacity: 0, duration: 2, scrollTrigger:{
+// 				trigger: '.artist1 ',
+// 				toggleActions: 'play none none reset'
+// 			}})
+
+// 		gsap.from('.artist2 .showcase-text', {opacity: 0, yPercent: 100, duration: 2,
+// 				scrollTrigger:{
+// 					trigger: '.artist2',
+// 					toggleActions: 'play none none reset'
+// 				}})
+
+// 		gsap.from('.artist2 .showcase2', {xPercent: 50, opacity: 0, duration:2, scrollTrigger:{
+// 			trigger: '.artist2',
+// 			toggleActions: 'play none none reset'
+// 		}})
+
+// 	},
+
+// 	// desktop
+// 	"(min-width: 768px)": function () {
+// 		gsap.from('.artist1 .showcase-text', {opacity: 0, yPercent: 100,
+// 			scrollTrigger:{
+// 				trigger: '.artist1',
+// 				scrub: true,
+// 			}})
+
+// 		gsap.from('.artist1 .showcase1', {xPercent: -50, opacity: 0, scrollTrigger:{
+// 				trigger: '.artist1 ',
+// 				scrub: true,
+// 			}})
+
+// 		gsap.from('.artist2 .showcase-text', {opacity: 0, yPercent: 100,
+// 				scrollTrigger:{
+// 					trigger: '.artist2',
+// 					scrub: true,
+// 				}})
+
+// 		gsap.from('.artist2 .showcase2', {xPercent: 50, opacity: 0, scrollTrigger:{
+// 			trigger: '.artist2',
+// 			scrub: true,
+// 		}})
+
+// 	},
+
+// 	//all
+// 	all: function () {
+// 		// ScrollTriggers created here aren't associated with a particular media query,
+// 		// so they persist.
+// 	},
+// });
+
+gsap.from(".artist1 .showcase-text", {
+	opacity: 0,
+	yPercent: 100,
+	duration: 2,
+	scrollTrigger: {
+		trigger: ".artist1",
+		toggleActions: "play none none reset",
+	},
+});
+
+gsap.from(".artist1 .showcase1", {
+	xPercent: -50,
+	opacity: 0,
+	duration: 2,
+	scrollTrigger: {
+		trigger: ".artist1 ",
+		toggleActions: "play none none reset",
+	},
+});
+
+gsap.from(".artist2 .showcase-text", {
+	opacity: 0,
+	yPercent: 100,
+	duration: 2,
+	scrollTrigger: {
+		trigger: ".artist2",
+		toggleActions: "play none none reset",
+	},
+});
+
+gsap.from(".artist2 .showcase2", {
+	xPercent: 50,
+	opacity: 0,
+	duration: 2,
+	scrollTrigger: {
+		trigger: ".artist2",
+		toggleActions: "play none none reset",
+	},
+});
 
 // initialize animations on pageload
 window.addEventListener("load", () => {
