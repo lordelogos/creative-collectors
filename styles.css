@@ -1729,6 +1729,13 @@ footer ul li {
 	}
 }
 
+.clear-div {
+	background: url("./assets/artist-bg.jpg");
+	height: 10vh;
+	width: 100vw;
+	margin-top: -10px;
+}
+
 /* custom cursor styling */
 .cursor {
 	display: none;
