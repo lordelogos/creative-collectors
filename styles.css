@@ -1647,7 +1647,6 @@ header .quote-controls button {
 		margin-top: 30px;
 	}
 }
-
 @media screen and (max-width: 600px) {
 	.artist-showcase .showcase-cta {
 		text-transform: uppercase;

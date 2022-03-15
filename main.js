@@ -68,7 +68,6 @@ const glider = new Glider(_el, {
 			},
 		},
 		{
-			// screens greater than >= 1024px
 			breakpoint: 1600,
 			settings: {
 				slidesToShow: 4,
