@@ -1014,7 +1014,7 @@ header .quote-controls button {
 	width: 100%;
 	height: 100%;
 	padding: 8rem 0;
-	margin: 2rem 0;
+	margin: 2rem auto;
 	display: flex;
 	align-items: center;
 }
@@ -1048,25 +1048,25 @@ header .quote-controls button {
 
 #nft1 {
 	background: linear-gradient(180deg, rgba(0, 0, 0, 0) 64.12%, #000000 100%),
-		url("./assets/nft1.png") no-repeat;
+		url("./assets/nft1.jpg") no-repeat;
 	background-size: cover;
 }
 
 #nft2 {
 	background: linear-gradient(180deg, rgba(0, 0, 0, 0) 64.12%, #000000 100%),
-		url("./assets/nft2.png") no-repeat;
+		url("./assets/nft2.jpg") no-repeat;
 	background-size: cover;
 }
 
 #nft3 {
 	background: linear-gradient(180deg, rgba(0, 0, 0, 0) 64.12%, #000000 100%),
-		url("./assets/nft3.png") no-repeat;
+		url("./assets/nft3.jpg") no-repeat;
 	background-size: cover;
 }
 
 #nft4 {
 	background: linear-gradient(180deg, rgba(0, 0, 0, 0) 64.12%, #000000 100%),
-		url("./assets/nft4.png") no-repeat;
+		url("./assets/nft4.jpg") no-repeat;
 	background-size: cover;
 }
 
@@ -1077,7 +1077,7 @@ header .quote-controls button {
 	width: 100%;
 	height: 100%;
 	background: linear-gradient(180deg, rgba(0, 0, 0, 0) 64.12%, #000000 100%),
-		url("./assets/nft1.png");
+		url("./assets/nft1.jpg");
 	filter: blur(20px);
 	z-index: -1;
 }
@@ -1089,7 +1089,7 @@ header .quote-controls button {
 	width: 100%;
 	height: 100%;
 	background: linear-gradient(180deg, rgba(0, 0, 0, 0) 64.12%, #000000 100%),
-		url("./assets/nft2.png");
+		url("./assets/nft2.jpg");
 	filter: blur(20px);
 	z-index: -1;
 }
@@ -1101,7 +1101,7 @@ header .quote-controls button {
 	width: 100%;
 	height: 100%;
 	background: linear-gradient(180deg, rgba(0, 0, 0, 0) 64.12%, #000000 100%),
-		url("./assets/nft3.png");
+		url("./assets/nft3.jpg");
 	filter: blur(20px);
 	z-index: -1;
 }
@@ -1113,7 +1113,79 @@ header .quote-controls button {
 	width: 100%;
 	height: 100%;
 	background: linear-gradient(180deg, rgba(0, 0, 0, 0) 64.12%, #000000 100%),
-		url("./assets/nft4.png");
+		url("./assets/nft4.jpg");
+	z-index: -1;
+	filter: blur(20px);
+}
+
+#nft5 {
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0) 64.12%, #000000 100%),
+		url("./assets/nft5.jpg") no-repeat;
+	background-size: cover;
+}
+
+#nft6 {
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0) 64.12%, #000000 100%),
+		url("./assets/nft6.jpg") no-repeat;
+	background-size: cover;
+}
+
+#nft7 {
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0) 64.12%, #000000 100%),
+		url("./assets/nft7.jpg") no-repeat;
+	background-size: cover;
+}
+
+#nft8 {
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0) 64.12%, #000000 100%),
+		url("./assets/nft8.jpg") no-repeat;
+	background-size: cover;
+}
+
+#nft5::before {
+	position: absolute;
+	top: 0;
+	content: "";
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0) 64.12%, #000000 100%),
+		url("./assets/nft5.jpg");
+	filter: blur(20px);
+	z-index: -1;
+}
+
+#nft6::before {
+	position: absolute;
+	top: 0;
+	content: "";
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0) 64.12%, #000000 100%),
+		url("./assets/nft6.jpg");
+	filter: blur(20px);
+	z-index: -1;
+}
+
+#nft7::before {
+	position: absolute;
+	top: 0;
+	content: "";
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0) 64.12%, #000000 100%),
+		url("./assets/nft7.jpg");
+	filter: blur(20px);
+	z-index: -1;
+}
+
+#nft8::before {
+	position: absolute;
+	top: 0;
+	content: "";
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0) 64.12%, #000000 100%),
+		url("./assets/nft8.jpg");
 	z-index: -1;
 	filter: blur(20px);
 }
