@@ -1340,6 +1340,11 @@ header .quote-controls button {
 	right: 55px;
 }
 
+.eye-animation > img {
+	width: 80%;
+	height: 80%;
+}
+
 .artist-showcase .main-header {
 	font-size: 7.5rem;
 	font-family: "Tomorrow", sans-serif;
@@ -1700,6 +1705,19 @@ header .quote-controls button {
 		font-size: 1rem;
 		letter-spacing: 1px;
 	}
+}
+
+/* eye animation effect */
+.showcase-cta > .eye-animation,
+.artist-section .showcase-text li .eye-animation,
+.artist-showcase > .eye-animation {
+	display: none;
+}
+
+.showcase-cta:hover .eye-animation,
+.artist-section .showcase-text li:hover .eye-animation,
+.artist-showcase:hover .eye-animation {
+	display: flex;
 }
 
 footer {
